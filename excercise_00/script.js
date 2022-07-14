@@ -1,6 +1,6 @@
 const ZZY = 21
 
-if (ZZY == 21){
+if (ZZY === 21){
 
 window.alert("yep")
 
@@ -10,3 +10,5 @@ window.alert("yep")
 
     window.alert("oo")
 }
+
+//${}$  : collaborate variables and text
