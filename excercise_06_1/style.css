@@ -1,0 +1,42 @@
+body {
+    font-family: 'Roboto', sans-serif;  
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button {
+    border: none;
+    font-size: 24px;
+    color: white;
+    background-color: red;
+    width: 200px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    
+  /*   transition-property: background-color;
+    transition-duration: 800ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 300ms; */
+    
+    /*short-hand property: */
+    transition: background-color 800ms ease-in-out 300ms;
+  }
+  .T-I-JW{
+
+    background-image: linear-gradient(to bottom, green, yellow);
+
+  }
+
+  .button:hover{
+
+    background-image: linear-gradient(to bottom, red, yellow);
+
+  }
