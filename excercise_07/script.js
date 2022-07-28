@@ -27,6 +27,23 @@ submitTweetButton.addEventListener('click', addTweet);
 tweetInput.addEventListener('keyup',updateTweetCount);
 
 // ----------------EVENT LISTENERS (callback function)
+setTimeout(() => {
+  
+}, timeout); {
+  localStorage.removeItem('tweets');
+  console.log('itemss have been removed on delay')
+}
+
+
+
+
+
+
+
+
+
+
+
 
 function pageLoadFn(event){
   if(localStorage.getItem('tweets') ===null){
@@ -104,3 +121,5 @@ tweetContainer.appendChild(newListItem);
 }
 form.reset();
 }
+
+
