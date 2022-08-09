@@ -1,6 +1,75 @@
-body{
-    background-color: rgb(235, 215, 182);
-    text-align: center;
+h1 {
+    font-size: 4rem;
+    color:rgb(18, 18, 18)
+    
+        
+    }
+.title{
+ position:fixed;
+ margin-left: 3cm;
 }
+p {
+    font-size: 1.5rem;
+}
+body {
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+    color: rgb(18, 18, 18);
+    background: #ffffff;
+    overflow-x: hidden;
+    text-align: center;   
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding-top: 50px;
+}
+
+      /* Blobs SVG background image via https://haikei.app/ */
+
+.blob-motion {
+    position: absolute;
+    transform: translateY(-20%);
+    z-index: 0;
+}
+
+.blob-content {
+    z-index: 1;
+}
+
+.blobs {
+    width: 100%;
+    background: url('./blobs.svg') no-repeat bottom / cover;
+}
+
+button{
+    
+   cursor: pointer;
+}
+
+
+
+img{
+    max-height: 100%;
+    max-width: 100%;
+    
+    /* width: 50%;
+    height: 50%;
+    align-items: flex-start; */
+    /* object-fit: cover; */
+}
+/* .image:hover{
+    backdrop-filter: blur(10px);
+    filter: blur(4px);
+    transition: 1s ease;
+} */
+section{
+    background-color: rgb(254, 254, 254);
+}
+
 
 
