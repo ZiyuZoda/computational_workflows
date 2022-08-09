@@ -1,14 +1,16 @@
-const ZZY = 21
-
-if (ZZY === 21){
-
-alert("yep")
 
 
-}else{
+$(window).scroll(function(e) {
+
+  var elOffset = $('.element').scrollTop() - $(window).scrollTop();
+
+  if(elOffset < 450) {
+      $(this).addClass('blur');
+  }
+
+});
 
 
-  alert("oo")
-}
 
-//${}$  : collaborate variables and text
+
+
