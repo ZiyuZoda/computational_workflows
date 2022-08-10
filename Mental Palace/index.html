@@ -18,29 +18,8 @@
 Mental Gallery
 </h1>
 
-<!-- File Uploader HTML-->
-
-
-<form action="fileupload.php" method="post" enctype="multipart/form-data"> 
-
-	<label for="file" class="custom-uploader">Upload Your File</label> 
-    <!-- diaplay the pic you uploaded -->
-	<input id="file" type="file"  onchange="previewFile()" name="fileToUpload" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"> 
-	<img src=""height="200" alt="Image preview">
-	<button type="submit" name="submit" class="btn btn-success"> 
-  
-   Upload File 
-  
-    </button> 
-  
-</form> 
-
-
-
-
-
 <!-- bubble -->
-<!-- <section class="pink">
+
 	<svg
 	  class="blob-motion"
 	  id="visual"
@@ -68,7 +47,20 @@ Mental Gallery
 	</svg>
 
 
-</section> -->
+<!-- File Uploader HTML-->
+<form action="fileupload.php" method="post" enctype="multipart/form-data"> 
+
+	<label for="file" class="custom-uploader">Upload Your File</label> 
+    <!-- diaplay the pic you uploaded -->
+	<input id="file" type="file"  onchange="previewFile()" name="fileToUpload" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"> 
+	<img src=""height="200" alt="Image preview">
+	<button type="submit" name="submit" class="btn btn-success"> 
+  
+    Upload File 
+  
+    </button> 
+  
+</form> 
 
 
 <!-- <a href="Mental Palace\Homepage.html">
