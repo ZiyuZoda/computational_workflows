@@ -1,12 +1,13 @@
 h1 {
     font-size: 4rem;
-    color:rgb(18, 18, 18)
+    color:rgb(18, 18, 18);
     
         
     }
 .title{
- position:fixed;
- margin-left: 3cm;
+ top: 50px;
+ color:rgb(18, 18, 18);
+ text-align: center; 
 }
 p {
     font-size: 1.5rem;
@@ -17,7 +18,7 @@ body {
     color: rgb(18, 18, 18);
     background: #ffffff;
     overflow-x: hidden;
-    text-align: center;   
+    /* text-align: center;  */
 }
 
 section {
@@ -37,9 +38,6 @@ section {
     z-index: 0;
 }
 
-.blob-content {
-    z-index: 1;
-}
 
 .blobs {
     width: 100%;
@@ -47,8 +45,10 @@ section {
 }
 
 button{
-    
+   position: fixed;
    cursor: pointer;
+   margin-left: 900px;
+   margin-top: 30px;
 }
 
 
@@ -56,7 +56,9 @@ button{
 img{
     max-height: 100%;
     max-width: 100%;
-    
+    position:fixed;
+    margin-left: 300px;
+    margin-top: 200px;
     /* width: 50%;
     height: 50%;
     align-items: flex-start; */
@@ -67,9 +69,18 @@ img{
     filter: blur(4px);
     transition: 1s ease;
 } */
-section{
-    background-color: rgb(254, 254, 254);
-}
 
+#file{
+    position:fixed;
+    margin-left: 600px;
+    margin-top: 30px;
+    
+}
+label{
+
+    position:fixed;
+    margin-left: 300px;
+    margin-top: 30px;
+}
 
 
