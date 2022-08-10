@@ -1,14 +1,20 @@
-let btn= document.querySelector('button');
+function previewFile() {
+  const preview = document.querySelector('img');
+  const file = document.querySelector('input[type=file]').files[0];
+  const reader = new FileReader();
 
+  reader.addEventListener("load", () => {
+    // convert image file to base64 string
+    preview.src = reader.result;
+  }, false);
 
-
-function GoNextPage(){
-  location.href("Homepage.html")
-
+  if (file) {
+    reader.readAsDataURL(file);
+  }
 }
-  
 
-btn.addEventListener('mouseclick', GoNextPage)
+
+
 
 
 
