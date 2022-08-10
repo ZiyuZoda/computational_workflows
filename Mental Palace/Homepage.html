@@ -44,7 +44,7 @@
 
 
 <p class="paragraph">
-Store your mental canvas.</br>
+Share your mental canvas.</br>
 Store your memory.</br>
 Have fun:)</br>
 </p>
@@ -63,7 +63,7 @@ $(window).scroll(function() {
 
 	var scroll = $(window).srcollTop();
 	console.log(scroll);
-	$('.image img').css({
+	$('.img-blur img').css({
 		//filter:"blur( 8px)"
 	 "-webkit-filter": "blur(" +(scroll/100) + "px)",
 	 filter:"blur(" +(scroll/100) + "px)"
