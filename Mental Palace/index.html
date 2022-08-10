@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mental Gallery</title>
+    <title>Canvas upload</title>
     <link  rel = "stylesheet" href = "style2.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,27 +17,30 @@
 <h1 class="title">
 Mental Gallery
 </h1>
+
 <!-- File Uploader HTML-->
+
+
 <form action="fileupload.php" method="post" enctype="multipart/form-data"> 
 
 	<label for="file" class="custom-uploader">Upload Your File</label> 
-  
-	<input id="file" type="file" name="fileToUpload" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"> 
-  
+    <!-- diaplay the pic you uploaded -->
+	<input id="file" type="file"  onchange="previewFile()" name="fileToUpload" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"> 
+	<img src=""height="200" alt="Image preview">
 	<button type="submit" name="submit" class="btn btn-success"> 
   
    Upload File 
   
-  </button> 
+    </button> 
   
 </form> 
 
 
-<section class="pink">
-	<div class="blob-content">
-	 
-	</div>
 
+
+
+<!-- bubble -->
+<!-- <section class="pink">
 	<svg
 	  class="blob-motion"
 	  id="visual"
@@ -64,20 +67,13 @@ Mental Gallery
 	  </g>
 	</svg>
 
-	<script>
-	  const tween = KUTE.fromTo(
-		'#blob1',
-		{ path: '#blob1' },
-		{ path: '#blob2' },
-		{ repeat: 999, duration: 3000, yoyo: true }
-	  ).start();
-	</script>
-</section>
+
+</section> -->
 
 
-<a href="Mental Palace\Homepage.html">
+<!-- <a href="Mental Palace\Homepage.html">
 	<button>Homepage</button>
-</a>
+</a> -->
 <script src="script2.js" ></script>
 </body>
 </html>
