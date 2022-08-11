@@ -9,14 +9,13 @@ location = "index.html"
 btn.addEventListener('mousedown', btnClickFn)
 
 
-
 var dataImage = localStorage.getItem('images');
 bannerImg = document.getElementById('tableBanner');
 bannerImg.src = dataImage;
 
-// window.onload = function() {
-//     var picture = localStorage.getItem('imgData');
-//     var image = document.createElement('img');
-//     image.src = picture;
-//     document.body.appendChild(image);
-//    };
+window.onload = function() {
+    var picture = localStorage.getItem('imgData');
+    var image = document.createElement('img');
+    image.src = picture;
+    document.body.appendChild(image);
+   };
