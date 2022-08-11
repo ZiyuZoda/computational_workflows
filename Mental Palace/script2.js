@@ -1,3 +1,42 @@
+let box = document.querySelector('box a')
+
+let images = {
+  "imageList": []
+}
+
+window.addEventListener('load', pageLoadFn)
+
+function pageLoadFn(event){
+  if(localStorage.getItem('images') === null){
+    return
+  } else {
+    images = JSON.parse(localStorage.getItem('images'))
+    images.imageList.forEach(displayImage)
+  }
+}
+
+function displayImage(image){
+  console.log(image) // {name: 'hello'}
+  if(image == "") return null
+
+
+  var memory = document.createElement("image");
+
+  // let newListItem = document.createElement('li');
+
+  // newListItem = `${memory}`;
+
+ 
+    box.appendChild(memory);
+  
+
+  // form.reset()
+  
+}
+
+
+
+
 // read img and show it
 function previewFile() {
   const preview = document.querySelector('img');
@@ -7,6 +46,13 @@ function previewFile() {
   reader.addEventListener("load", () => {
     // convert image file to base64 string
     preview.src = reader.result;
+
+    let imgObject = {
+      img: reader.result
+    }
+    images.imageList.push(imgObject);
+    localStorage.setItem('images', JSON.stringify(images))
+
   }, false);
 
   if (file) {
@@ -14,6 +60,11 @@ function previewFile() {
     
   }
 }
+
+
+
+
+
 // when upload, dive into homepage
 let btn= document.querySelector('button');
 
