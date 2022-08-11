@@ -4,35 +4,54 @@ let images = {
   "imageList": []
 }
 
-window.addEventListener('load', pageLoadFn)
-
-function pageLoadFn(event){
-  if(localStorage.getItem('images') === null){
-    return
-  } else {
-    images = JSON.parse(localStorage.getItem('images'))
-    images.imageList.forEach(displayImage)
-  }
-}
-
-function displayImage(image){
-  console.log(image) // {name: 'hello'}
-  if(image == "") return null
+// window.addEventListener('load', pageLoadFn)
 
 
-  const newImg = `<img src="${image}" style="width:200px;"></img>`;
-console.log(newImg)
-  
-  // finalimage = `url(${memory})`;
-  // newListItem = `${memory}`;
+
+// function pageLoadFn(event){
+//   if(localStorage.getItem('images') === null){
+//     return
+//   } else {
+//     images = JSON.parse(localStorage.getItem('images'))
+//     images.imageList.forEach(displayImage)
+//   }
+// }
+
+// var img = new Image();
+// img.src = file;
+// img.load = function() {
+//  var canvas = document.createElement('canvas');
+//  document.body.appendChild(canvas);
+//  var context = canvas.getContext('2d');
+//  context.drawImage(img, 0, 0);
+//  var data = context.getImageData(x, y, img.width, img.height).data;
+//  localStorage.setItem('image', data); // save image data
+// };
+
+// window.onload = function() {
+//   var picture = localStorage.getItem('image');
+//   var image = document.createElement('img');
+//   image.src = picture;
+//   document.body.appendChild(image);
+//  };
+
+
+
+// function displayImage(image){
+//   console.log(image) // {name: 'hello'}
+//   // if(image == "") return null
+
     
- 
-    box.appendChild(newImg);
+//   var picture = localStorage.getItem('image');
+//   var Image = document.createElement('img');
+//   Image.src = picture;
+//   document.body.appendChild(Image);
+//     // box.appendChild(newImg);
   
 
-  // form.reset()
+//   // form.reset()
   
-}
+// }
 
 
 
@@ -42,6 +61,8 @@ function previewFile() {
   const preview = document.querySelector('img');
   const file = document.querySelector('input[type=file]').files[0];
   const reader = new FileReader();
+  const uploadImage = document.querySelector('input[type=file]').files[0];
+  const imgData = getBase64Image(uploadImage)
 
   reader.addEventListener("load", () => {
     // convert image file to base64 string
@@ -51,8 +72,8 @@ function previewFile() {
       img: reader.result
     }
     images.imageList.push(imgObject);
-    localStorage.setItem('images', JSON.stringify(images))
-
+   localStorage.setItem('images', JSON.stringify(images))
+    localStorage.setItem("imgData", imgData);
   }, false);
 
   if (file) {
@@ -62,6 +83,24 @@ function previewFile() {
 }
 
 
+
+
+function getBase64Image(img) {
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  var ctx = canvas.getContext("2d");
+
+  img.onload = function () {
+    ctx.drawImage(img, 200, 200);
+};
+  
+
+  var dataURL = canvas.toDataURL("image/png");
+
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
 
 
 
@@ -83,4 +122,9 @@ const tween = KUTE.fromTo(
   { path: '#blob2' },
   { repeat: 999, duration: 3000, yoyo: true }
 ).start();
+
+
+
+
+
 
