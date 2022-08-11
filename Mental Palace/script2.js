@@ -69,7 +69,7 @@ function previewFile() {
 let btn= document.querySelector('button');
 
 function btnClickFn(){
-
+  event.preventDefault();
 location = "Homepage.html"
 window.alert("Thank you for sharing your treasure with us")
 }
