@@ -20,14 +20,14 @@ function displayImage(image){
   if(image == "") return null
 
 
-  var memory = document.createElement("image");
-
+  const newImg = `<img src="${image}" style="width:200px;"></img>`;
+console.log(newImg)
   
-  finalimage = `url(${memory})`;
+  // finalimage = `url(${memory})`;
   // newListItem = `${memory}`;
     
  
-    box.appendChild(finalimage);
+    box.appendChild(newImg);
   
 
   // form.reset()
