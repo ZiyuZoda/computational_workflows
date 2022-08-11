@@ -61,7 +61,7 @@ function previewFile() {
   const preview = document.querySelector('img');
   const file = document.querySelector('input[type=file]').files[0];
   const reader = new FileReader();
-  const uploadImage = document.querySelector('input[type=file]').files[0];
+  const uploadImage = document.getElementById('file');
   const imgData = getBase64Image(uploadImage)
 
   reader.addEventListener("load", () => {
@@ -72,13 +72,14 @@ function previewFile() {
       img: reader.result
     }
     images.imageList.push(imgObject);
-   localStorage.setItem('images', JSON.stringify(images))
+  //  localStorage.setItem('images', JSON.stringify(images))
     localStorage.setItem("imgData", imgData);
+
   }, false);
 
   if (file) {
     reader.readAsDataURL(file);
-    
+
   }
 }
 
@@ -90,11 +91,13 @@ function getBase64Image(img) {
   canvas.width = img.width;
   canvas.height = img.height;
 
+  console.log(canvas.width,canvas.height);
+  
   var ctx = canvas.getContext("2d");
 
   img.onload = function () {
     ctx.drawImage(img, 200, 200);
-};
+  };
   
 
   var dataURL = canvas.toDataURL("image/png");
@@ -102,7 +105,7 @@ function getBase64Image(img) {
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 
-
+// 
 
 // when upload, dive into homepage
 let btn= document.querySelector('button');
