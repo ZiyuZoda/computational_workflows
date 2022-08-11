@@ -4,18 +4,18 @@ let images = {
   "imageList": []
 }
 
-// window.addEventListener('load', pageLoadFn)
+window.addEventListener('load', pageLoadFn)
 
 
 
-// function pageLoadFn(event){
-//   if(localStorage.getItem('images') === null){
-//     return
-//   } else {
-//     images = JSON.parse(localStorage.getItem('images'))
-//     images.imageList.forEach(displayImage)
-//   }
-// }
+function pageLoadFn(event){
+  if(localStorage.getItem('images') === null){
+    return
+  } else {
+    images = JSON.parse(localStorage.getItem('images'))
+    images.imageList.forEach(displayImage)
+  }
+}
 
 // var img = new Image();
 // img.src = file;
@@ -28,53 +28,60 @@ let images = {
 //  localStorage.setItem('image', data); // save image data
 // };
 
-// window.onload = function() {
-//   var picture = localStorage.getItem('image');
-//   var image = document.createElement('img');
-//   image.src = picture;
-//   document.body.appendChild(image);
-//  };
+// letti was here
+var uploadField = document.getElementById("file");
 
+uploadField.addEventListener("change", function() {
+  changeImage(this);
+});
 
+function changeImage(input) {
+  var reader;
 
-// function displayImage(image){
-//   console.log(image) // {name: 'hello'}
-//   // if(image == "") return null
+  if(input.files && input.files[0]){
+      reader = new FileReader();
 
-    
-//   var picture = localStorage.getItem('image');
-//   var Image = document.createElement('img');
-//   Image.src = picture;
-//   document.body.appendChild(Image);
-//     // box.appendChild(newImg);
-  
+      reader.onload = function(event){
+          
+          result = event.target.result
+          console.log(result)
+      }
+      reader.readAsDataURL(input.files[0]);
+  }
+  console.log(input.files)
+}
 
-//   // form.reset()
-  
-// }
+const addNewImage = (e) => {
+  e.preventDefault();
+const lettiImage = `<img src="${result}"></img>`;
 
+let imgObject = {
+  img: lettiImage
+}
 
-
-
+images.imageList.push(imgObject);
+localStorage.setItem('images', JSON.stringify(images))
+}
 // read img and show it
 function previewFile() {
   const preview = document.querySelector('img');
   const file = document.querySelector('input[type=file]').files[0];
   const reader = new FileReader();
-  const uploadImage = document.getElementById('file');
+  // const uploadImage = document.getElementById('file');
+  const uploadImage = document.querySelector('img');
   const imgData = getBase64Image(uploadImage)
-
+  
   reader.addEventListener("load", () => {
     // convert image file to base64 string
     preview.src = reader.result;
     
-    let imgObject = {
-      img: reader.result
-    }
-    images.imageList.push(imgObject);
+    // let imgObject = {
+    //   img: reader.result
+    // }
+    // images.imageList.push(imgObject);
   //  localStorage.setItem('images', JSON.stringify(images))
     localStorage.setItem("imgData", imgData);
-
+   
   }, false);
 
   if (file) {
@@ -86,24 +93,24 @@ function previewFile() {
 
 
 
-function getBase64Image(img) {
-  var canvas = document.createElement("canvas");
-  canvas.width = img.width;
-  canvas.height = img.height;
+// function getBase64Image(img) {
+//   var canvas = document.createElement("canvas");
+//   canvas.width = img.width;
+//   canvas.height = img.height;
 
-  console.log(canvas.width,canvas.height);
+//   console.log(canvas.width,canvas.height);
   
-  var ctx = canvas.getContext("2d");
+//   var ctx = canvas.getContext("2d");
 
-  img.onload = function () {
-    ctx.drawImage(img, 200, 200);
-  };
+//   img.onload = function () {
+//     ctx.drawImage(img, 200, 200);
+//   };
   
 
-  var dataURL = canvas.toDataURL("image/png");
-
-  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
+//   var dataURL = canvas.toDataURL("image/png");
+// console.log(dataURL)
+//   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");;
+// }
 
 // 
 
