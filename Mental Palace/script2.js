@@ -22,12 +22,12 @@ function displayImage(image){
 
   var memory = document.createElement("image");
 
-  // let newListItem = document.createElement('li');
-
+  
+  finalimage = `url(${memory})`;
   // newListItem = `${memory}`;
-
+    
  
-    box.appendChild(memory);
+    box.appendChild(finalimage);
   
 
   // form.reset()
@@ -46,7 +46,7 @@ function previewFile() {
   reader.addEventListener("load", () => {
     // convert image file to base64 string
     preview.src = reader.result;
-
+    
     let imgObject = {
       img: reader.result
     }
