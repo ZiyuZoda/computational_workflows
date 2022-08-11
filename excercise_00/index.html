@@ -8,8 +8,30 @@
     <link  rel = "stylesheet" href = "style.css">
 </head>
 <body>
+    <section class = "image">
+        <img src="img\download (1).png" class = "img-blur" alt="My test image" >
+    </section>
     
-Wulala~
+    
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+    <script>
+    $(window).scroll(function() {
+    
+        var scroll = $(window).srcollTop();
+        console.log(scroll);
+        $('.img-blur img').css({
+            //filter:"blur( 8px)"
+         "-webkit-filter": "blur(" +(scroll/100) + "px)",
+         filter:"blur(" +(scroll/100) + "px)"
+        })
+      
+      }); 
+    </script>
+
+<section class = "image">
+    <img src="img\2.png" alt="My test image" >
+</section>
 <script src="script.js" ></script>
 
 
