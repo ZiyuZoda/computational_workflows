@@ -93,24 +93,24 @@ function previewFile() {
 
 
 
-// function getBase64Image(img) {
-//   var canvas = document.createElement("canvas");
-//   canvas.width = img.width;
-//   canvas.height = img.height;
+function getBase64Image(img) {
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
 
-//   console.log(canvas.width,canvas.height);
+  console.log(canvas.width,canvas.height);
   
-//   var ctx = canvas.getContext("2d");
+  var ctx = canvas.getContext("2d");
 
-//   img.onload = function () {
-//     ctx.drawImage(img, 200, 200);
-//   };
+  img.onload = function () {
+    ctx.drawImage(img, 500, 500);
+  };
   
 
-//   var dataURL = canvas.toDataURL("image/png");
-// console.log(dataURL)
-//   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");;
-// }
+  var dataURL = canvas.toDataURL("image/png");
+console.log(dataURL)
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
 
 // 
 
